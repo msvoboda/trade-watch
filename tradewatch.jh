@@ -1,0 +1,35 @@
+
+application {
+  config {
+    baseName myApp,
+    applicationType monolith,
+    packageName com.svoboda.tradewatch,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+    clientFramework angular
+  }
+  entities *
+}
+
+entity StockInfo {
+  symbol String,
+  currentChange Float, 
+  nabidka BigDecimal,
+  poptavka BigDecimal 
+  minimum Float,
+  maximum Float,
+  increaseHours Integer,
+  decreaseHours Integer
+}
+
+entity TradeList {
+  symbol String,
+  currentChange Float, 
+  nabidka BigDecimal,
+  poptavka BigDecimal 
+}
+
+relationship OneToMany {
+  Foo to Bar
+}
+    
